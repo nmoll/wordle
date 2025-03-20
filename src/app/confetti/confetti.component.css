@@ -1,0 +1,25 @@
+circle {
+  opacity: 0;
+  animation: dash var(--duration) var(--delay) linear var(--direction) infinite
+    forwards;
+}
+
+@keyframes dash {
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}

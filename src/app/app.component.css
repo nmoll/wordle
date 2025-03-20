@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 24px;
+}
+
+.title {
+  font-size: 24px;
+  color: white;
+}
+
+.wordle {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 500px;
+  width: 100%;
+}
+
+.cell {
+  border: 1px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.correct {
+  background: #548d4e;
+  border-color: #548d4e;
+}
+
+.incorrect {
+  background: #3a3a3c;
+  border-color: #3a3a3c;
+}
+
+.wrong-spot {
+  background: #b59f3c;
+  border-color: #b59f3c;
+}
+
+.correct,
+.incorrect,
+.wrong-spot {
+  animation: flipX 1s ease-in-out;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.keyboard .row {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.keyboard button {
+  background-color: #828384;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  color: white;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.keyboard button.wider {
+  flex: 1.5;
+  font-size: 11px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #ffffff1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+app-confetti {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.overlay .message {
+  background: black;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
+@keyframes flipX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

@@ -1,6 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { Wordle, LetterPosition } from '../wordle-game/wordle';
+import { Wordle, LetterPosition } from './wordle-game/wordle';
 import wordsJSON from '../words.json';
 import { ConfettiComponent } from './confetti/confetti.component';
 

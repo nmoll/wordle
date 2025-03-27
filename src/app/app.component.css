@@ -9,15 +9,16 @@
 
 .title {
   font-size: 24px;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .wordle {
   display: grid;
   gap: 4px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
+
 }
 
 .cell {
@@ -116,9 +117,11 @@ app-confetti {
   0% {
     transform: rotateX(0deg);
   }
+
   50% {
     transform: rotateX(90deg);
   }
+
   100% {
     transform: rotateX(0deg);
   }

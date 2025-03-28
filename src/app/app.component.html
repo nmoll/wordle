@@ -15,7 +15,10 @@
   <div class="keyboard">
     @for (row of keyboard; track $index) {
     <div class="row">
-      @for (key of row; track key;) {
+      @for (key of row; track key;) { @if (key === '') {
+      <div class="spacer"></div>
+      } @else {
+
       <button
         (click)="pressKeyboard(key)"
         [class.wider]="key === 'enter' || key === 'backspace'"
@@ -41,7 +44,7 @@
         {{ key }}
         }
       </button>
-      }
+      } }
     </div>
     }
   </div>

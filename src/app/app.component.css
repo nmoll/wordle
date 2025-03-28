@@ -18,7 +18,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   max-width: 400px;
   width: 100%;
-
 }
 
 .cell {
@@ -79,11 +78,18 @@
   color: white;
   text-transform: uppercase;
   flex: 1;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard button.enter {
+  font-size: 11px;
 }
 
 .keyboard button.wider {
   flex: 1.5;
-  font-size: 11px;
 }
 
 .overlay {

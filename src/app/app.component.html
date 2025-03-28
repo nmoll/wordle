@@ -19,15 +19,16 @@
       <button
         (click)="pressKeyboard(key)"
         [class.wider]="key === 'enter' || key === 'backspace'"
+        [class.enter]="key === 'enter'"
         [ngClass]="keyColors.get(key)"
       >
         @if (key === 'backspace') {
         <svg
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
-          height="16"
+          height="18"
           viewBox="0 0 24 24"
-          width="16"
+          width="18"
           class="game-icon"
           data-testid="icon-backspace"
         >

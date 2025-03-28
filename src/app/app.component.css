@@ -35,18 +35,18 @@
 }
 
 .correct {
-  background: #548d4e;
-  border-color: #548d4e;
+  background: #548d4e !important;
+  border-color: #548d4e !important;
 }
 
 .incorrect {
-  background: #3a3a3c;
-  border-color: #3a3a3c;
+  background: #3a3a3c !important;
+  border-color: #3a3a3c !important;
 }
 
 .wrong-spot {
-  background: #b59f3c;
-  border-color: #b59f3c;
+  background: #b59f3c !important;
+  border-color: #b59f3c !important;
 }
 
 .correct,

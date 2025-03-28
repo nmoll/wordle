@@ -1,3 +1,5 @@
+export type LetterState = 'correct' | 'incorrect' | 'wrong-spot';
+
 /**
  * The Wordle game.
  *
@@ -148,7 +150,7 @@ export class LetterPosition {
    * - If in the word but wrong-spot, returns 'incorrect'
    * - Otherwise returns 'incorrect'
    */
-  check(): 'correct' | 'incorrect' | 'wrong-spot' {
+  check(): LetterState {
     const analyze = this.analyzeWord();
     if (analyze.correct.includes(this.position)) {
       return 'correct';

@@ -1,6 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { Wordle, LetterPosition } from './wordle-game/wordle';
+import {
+  Wordle,
+  LetterPosition,
+  WordGuess,
+  LetterState,
+} from './wordle-game/wordle';
 import wordsJSON from '../words.json';
 import { ConfettiComponent } from './confetti/confetti.component';
 
@@ -42,6 +47,8 @@ export class AppComponent {
     ['enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'backspace'],
   ];
 
+  keyColors = new Map<string, LetterState>();
+
   guessing: string[] = [];
 
   constructor() {
@@ -72,6 +79,8 @@ export class AppComponent {
     setTimeout(() => {
       this.rows[i].columns[4].colorClass = guessResult.letter5.check();
     }, 1500);
+
+    this.updateKeyColors(guessResult);
   }
 
   pressKeyboard(key: string) {
@@ -98,6 +107,7 @@ export class AppComponent {
     this.wordle = this.createWordle();
     this.rows = [];
     this.createCells();
+    this.keyColors.clear();
   }
 
   private createCells() {
@@ -111,6 +121,39 @@ export class AppComponent {
           new Column(undefined),
         ])
       );
+    }
+  }
+
+  private updateKeyColors(guess: WordGuess) {
+    this.updateKeyColor(guess.letter1);
+    this.updateKeyColor(guess.letter2);
+    this.updateKeyColor(guess.letter3);
+    this.updateKeyColor(guess.letter4);
+    this.updateKeyColor(guess.letter5);
+  }
+
+  private updateKeyColor(letter: LetterPosition) {
+    const key = letter.letter;
+    this.keyColors.set(
+      key,
+      this.getGreaterState(
+        letter.check(),
+        this.keyColors.get(key) ?? 'incorrect'
+      )
+    );
+  }
+
+  private getGreaterState(a: LetterState, b: LetterState) {
+    const hieararchy: Record<LetterState, number> = {
+      incorrect: 0,
+      'wrong-spot': 1,
+      correct: 2,
+    };
+
+    if (hieararchy[a] > hieararchy[b]) {
+      return a;
+    } else {
+      return b;
     }
   }
 

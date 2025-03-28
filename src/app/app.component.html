@@ -1,5 +1,4 @@
 <div class="container">
-  <span class="title">MyUh Wordle</span>
   <div class="wordle">
     @for (row of rows; track row.id; let rowIdx = $index) { @for (column of
     row.columns; track column.id; let colIdx = $index) {
@@ -20,6 +19,7 @@
       <button
         (click)="pressKeyboard(key)"
         [class.wider]="key === 'enter' || key === 'backspace'"
+        [ngClass]="keyColors.get(key)"
       >
         @if (key === 'backspace') {
         <svg

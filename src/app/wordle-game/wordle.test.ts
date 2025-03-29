@@ -1,4 +1,3 @@
-import { expect, test } from 'bun:test';
 import { Wordle } from './wordle';
 
 const word = 'games';

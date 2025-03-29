@@ -57,7 +57,7 @@ export class Wordle {
       new LetterPosition(letter2, 1, this.word, guess),
       new LetterPosition(letter3, 2, this.word, guess),
       new LetterPosition(letter4, 3, this.word, guess),
-      new LetterPosition(letter5, 4, this.word, guess)
+      new LetterPosition(letter5, 4, this.word, guess),
     );
 
     // Adds the guess to the list!
@@ -100,7 +100,7 @@ export class WordGuess {
     letter2: LetterPosition,
     letter3: LetterPosition,
     letter4: LetterPosition,
-    letter5: LetterPosition
+    letter5: LetterPosition,
   ) {
     this.letter1 = letter1;
     this.letter2 = letter2;
@@ -204,10 +204,10 @@ export class LetterPosition {
     // guess: [0, 1]
 
     indexesOfLetterInGuess = indexesOfLetterInGuess.filter(
-      (i) => !correct.includes(i)
+      (i) => !correct.includes(i),
     );
     indexesOfLetterInWord = indexesOfLetterInWord.filter(
-      (i) => !correct.includes(i)
+      (i) => !correct.includes(i),
     );
 
     indexesOfLetterInGuess.forEach((num, i) => {

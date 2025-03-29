@@ -119,7 +119,7 @@ export class AppComponent {
           new Column(undefined),
           new Column(undefined),
           new Column(undefined),
-        ])
+        ]),
       );
     }
   }
@@ -138,8 +138,8 @@ export class AppComponent {
       key,
       this.getGreaterState(
         letter.check(),
-        this.keyColors.get(key) ?? 'incorrect'
-      )
+        this.keyColors.get(key) ?? 'incorrect',
+      ),
     );
   }
 
